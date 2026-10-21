@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "localscope"
+version = "1.0.0"
+description = "Privacy-first local disk space explorer for Windows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = ["PySide6>=6.6,<7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+localscope = "localscope.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
